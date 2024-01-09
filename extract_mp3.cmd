@@ -7,7 +7,7 @@ setlocal EnableDelayedExpansion
 for %%i in (!mylist!) do (
 endlocal
 title %ti% - %%~nxi
-ffmpeg.exe -i "%%~i" -c:v h264_amf -b:v 256k -n "%mytmp%\%%~ni.mp3"
+ffmpeg.exe -hide_banner -i "%%~i" -c:v h264_amf -b:v 256k -n "%mytmp%\%%~ni.mp3"
 move "%mytmp%\%%~ni.mp3" "%%~dpni.mp3"
 setlocal
 )
